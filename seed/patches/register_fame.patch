@@ -1,0 +1,31 @@
+--- a/sleeprnn/common/constants.py
++++ b/sleeprnn/common/constants.py
+@@ -8,6 +8,8 @@
+ CAP_SS_NAME = "cap_ss"
+ PINK_NAME = "pink_nn"
+ NSRR_SS_NAME = "nsrr_ss"
++FAME_SS_NAME = "fame_ss"
++FAME_KC_NAME = "fame_kc"
+ 
+ # Database split
+ TRAIN_SUBSET = "train"
+--- a/sleeprnn/helpers/reader.py
++++ b/sleeprnn/helpers/reader.py
+@@ -12,6 +12,8 @@
+ from sleeprnn.data.cap_ss import CapSS
+ from sleeprnn.data.pink import Pink
+ from sleeprnn.data.nsrr_ss import NsrrSS
++from sleeprnn.data.fame_ss import FameSS
++from sleeprnn.data.fame_kc import FameKC
+ 
+ PROJECT_ROOT = os.path.join(os.path.dirname(__file__), "../..")
+ RESULTS_PATH = os.path.join(PROJECT_ROOT, "results")
+@@ -230,6 +232,8 @@
+ ):
+     # Load data
+     name_to_class_map = {
++        constants.FAME_SS_NAME: FameSS,
++        constants.FAME_KC_NAME: FameKC,
+         constants.MASS_KC_NAME: MassKC,
+         constants.MASS_SS_NAME: MassSS,
+         constants.MODA_SS_NAME: ModaSS,
