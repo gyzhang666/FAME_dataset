@@ -38,19 +38,23 @@ We highly recommend using a separate Conda environment for each project, as thei
 
  1. SEED
 git clone https://github.com/nicolasigor/Sleep-EEG-Event-Detector.git
+
 cd Sleep-EEG-Event-Detector
+
 conda create -n seed python=3.9
+
 conda activate seed
+
 pip install -r seed/Sleep-EEG-Event-Detector-main/requirements.txt
 
- 2. Dosed
+ 3. Dosed
 git clone https://github.com/Dreem-Organization/dosed.git
 cd dosed
 conda create -n dosed python=3.9
 conda activate dosed
 pip install -r requirements.txt
 
- 3. U-net
+ 4. U-net
 git clone https://github.com/LordXX505/SpindleDetection.git
 cd SpindleDetection
 conda create -n SpindleDetection
