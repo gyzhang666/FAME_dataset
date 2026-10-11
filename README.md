@@ -1,12 +1,12 @@
 # Automated Sleep Spindles and K-complexes Detection in FAME
 
-This document describes the three reference implementations stored in this directory and explains how to adapt them to a private dataset such as FAME. The original model code should be kept unchanged whenever possible; dataset-specific work should be isolated in loaders, conversion scripts, and configuration files.
+This document describes how we evaluate the FAME dataset using three established models (SEED, DOSED, and U-Net). To maintain the integrity of the original authors' work, the core model code is kept unchanged; all dataset-specific adaptations are strictly isolated in custom data loaders, preprocessing scripts, and configuration files.
 
 ## Contents
 
 - [Projects](#projects)
 - [Setup](#setup)
-- [Dataset](#Dataset)
+- [Dataset](#dataset)
 
 ## Projects
 
@@ -36,30 +36,37 @@ Because this repository only provides dataset adapters and preprocessing scripts
 
 We highly recommend using a separate Conda environment for each project, as their framework and dependency requirements may conflict.
 
- 1. SEED
+### 1. SEED
+
+```bash
 git clone https://github.com/nicolasigor/Sleep-EEG-Event-Detector.git
 cd Sleep-EEG-Event-Detector
 ## Set up the environment
 conda create -n seed python=3.9
 conda activate seed
 pip install -r seed/Sleep-EEG-Event-Detector-main/requirements.txt
+```
+### 2. Dosed
 
- 3. Dosed
+```bash
 git clone https://github.com/Dreem-Organization/dosed.git
 cd dosed
 ## Set up the environment
 conda create -n dosed python=3.9
 conda activate dosed
 pip install -r requirements.txt
+```
 
- 5. U-net
+### 3. U-net
+
+```bash
 git clone https://github.com/LordXX505/SpindleDetection.git
 cd SpindleDetection
 ## Set up the environment
 conda create -n SpindleDetection
 conda activate SpindleDetection
 pip install -r requirements.txt
-
+```
 
 ## Dataset
 We use the FAME datasets.
